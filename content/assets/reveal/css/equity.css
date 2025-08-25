@@ -1,0 +1,118 @@
+@font-face {
+    font-family: "Inconsolata";
+    src: url("fonts/Inconsolata-Regular.woff");
+}
+
+@font-face {
+  font-family: "Concourse Caps";
+  src: url("fonts/ConcourseC3.woff");
+}
+
+@font-face {
+    font-family: "Concourse Text";
+    src: url("fonts/ConcourseT3.woff");
+}
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.reveal table th {
+  font-weight: bold;
+}
+.reveal table th {
+  text-align: left;
+  padding: 0.2em 0.5em;
+  border-bottom: 1px solid;
+}
+
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em;
+}
+.reveal table th[align=center],
+.reveal table td[align=center] {
+  text-align: center;
+}
+.reveal table th[align=right],
+.reveal table td[align=right] {
+  text-align: right;
+}
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal {
+    font-family: "Concourse Text";
+    font-size: 40px;
+    font-weight: normal;
+    background: #caf0f8;
+    color: #333; }
+
+.reveal .slides {
+    text-align: left;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-family: "Concourse Caps", sans-serif;
+    font-weight: normal;
+    line-height: 1.2;
+    text-shadow: none;
+    text-transform: none;
+    text-align: center;
+    word-wrap: break-word; }
+
+
+.twocolumn {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "left right"
+        "footer footer";
+    grid-gap: 10px;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+
+}
+
+.left {grid-area: left;}
+.right {grid-area: right;}
+.header {grid-area: header;}
+.footer {grid-area: footer;}
+
+/* .left {
+// 	margin: 10px 0 15px 20px;
+	text-align: left;
+	float: left;
+	z-index:-10;
+	width:48%;
+}
+
+.right {
+	margin: 10px 0 15px 0;
+	float: right;
+	text-align: left;
+	z-index:-10;
+	width:48%;
+}
+
+*/
+
+.center {
+	  margin-left: auto;
+	  margin-right: auto;
+}
+
+.reveal code {
+    font-family: "Inconsolata", monospace;
+}

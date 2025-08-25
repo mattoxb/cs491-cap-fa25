@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/equity.css" id="theme" />
+    <link rel="stylesheet" href="css/vs2015.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Combinatorics
+## CS 491 CAP
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Objectives
+
+- Determine the next lexicographic permutation of an array
+- Calculate and use Binomial Coefficients
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Permutations
+
+- A *permutation* is a rearrangement of elements of an array.
+  - Some permutations of 1,2,3,4,5:
+
+    - `$\begin{array}{lllll} 1 & 4 & 3 & 5 & 2 \end{array}$`
+    - `$\begin{array}{lllll} 4 & 1 & 2 & 3 & 5 \end{array}$`
+    - `$\begin{array}{lllll} 5 & 4 & 3 & 1 & 2 \end{array}$`
+    - `$\begin{array}{lllll} 3 & 2 & 5 & 1 & 2 \end{array}$`
+
+
+- There are `$n!$` permutations of `$n$` distinct elements.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Permutations with Repetitions
+
+- Suppose there are repeated elements
+  - `$n$` total elements,
+  - `$n_1$` elements of class 1,
+  - `$n_2$` elements of class 2, etc...
+  - `$n_j$` elements of class `$j$`.
+
+There are `$\frac{n!}{n_1! n_2! \cdots n_j}$` total permutations.
+
+- E.g., How many ways are there to line up 6 red balls and 3 white balls?
+
+  = `$\frac{9!}{6!3!}$`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Calculating Next Permutations
+
+- C++ has a =next_permutation= function, but suppose you need to do this yourself?
+
+  - Find the highest index `$i$` such that `$a[i] < a[i+1]$`  This is the *pivot*.
+  - Find the highest index `$j$` such that `$a[j] > a[i]$`.
+
+  `$\begin{array}{lllll} 1 & 4 & 3 & 5 & 2 \end{array}$`
+
+  - In the above array, `$a[i] = 3, a[j] = 5$`.
+  - Swap `$a[j]$` and `$a[i]$`.
+
+  `$\begin{array}{lllll} 1 & 4 & 5 & 3 & 2 \end{array}$`
+
+  - Then sort the following elements.
+
+  `$\begin{array}{lllll} 1 & 4 & 5 & 2 & 3 \end{array}$`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Code
+
+``` c++
+void nextPermutation(int arr[], int n) {
+    int i = n - 2;
+    // Find the index of the first element that is smaller than the element to its right
+    while (i >= 0 && arr[i] >= arr[i + 1]) i--;
+    // If there is no such element, the array is already in descending order, so we reverse it
+    if (i < 0) {
+        reverse(arr, 0, n - 1);
+        return;
+    }
+    int j = n - 1;
+    // Find the index of the smallest element to the right of i that is greater than arr[i]
+    while (j >= 0 && arr[j] <= arr[i]) j--;
+    swap(arr[i], arr[j]);
+    // Reverse the elements to the right of i
+    reverse(arr, i + 1, n - 1);
+}
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Derangements
+
+- A derangement is a permuation `$\sigma$` such that `$\sigma(i) \not= i$` for all `$i \in \{1..n\}$`.
+
+- Written `$!n$`
+
+  `$\begin{array}{ll} !0 = & 0 \\ !1 = & 0 \\ !n = & (n-1) * (!(n-1) +!(n-2)) \end{array}$`
+
+  - Case Analysis:
+    - Suppose for some `$i$`, `$\sigma(1) = i$` and also `$\sigma(i) = 1$`.  Then there are `$!(n-2)$` ways to
+      derange the remaining elements.
+    - Suppose `$\sigma(1) = i$` but `$\sigma(i) \not= 1$`.  Then there are `$!(n-1)$` ways to derange the
+      remaining elements (since `$i$` and `$1$` did not "pair up").
+      
+      
+- `$!2 = 1, !3 = 2, !4 = 9, !5 = 44, !6 = 265, ...$`
+- Not that common, but easy to code with DP.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Binomial Coefficients
+
+ - Coefficients of the expansion of `$(x+y)^n$`
+
+    e.g. `$(x+y)= x+ 4x+ 6x^2y+ 4xy+ y^4$`
+
+- These are everywhere.  E.g. Pascal's Triangle...
+
+  `$\begin{array}{c} 1 \\ 1\ 1 \\  1\ 2\ 1 \\ 1\ 3\ 3\ 1\\ 1\ 4\ 6\ 4\ 1 \end{array}$`
+
+- Number of ways to chose `$k$` items from `$n$` objects.  (`$k$` starts at 0...)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1200px; width: 1920px; min-height: 1200px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Formulae
+
+- The formula: `$C(n,k) = \frac{n!}{k!(n-k)!}$`
+
+- The recurrence: either take or ignore an item
+
+    `$\begin{array}{ll} C(n,0) = C(n,n) = & 1 \\ C(n,k) = & C(n − 1, k − 1) + C(n − 1, k) \end{array}$`
+
+- Use DP if you need a lot, but not all, of these numbers.
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1920,"height":1200,"margin":0,"controls":true,"progress":true,"slideNumber":false,"transition":"fade","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>

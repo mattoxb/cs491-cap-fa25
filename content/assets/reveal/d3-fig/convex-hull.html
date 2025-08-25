@@ -1,0 +1,123 @@
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<svg height="500" width="500">
+</svg>
+
+<script>
+ var lineFunction = d3.line()
+                      .x(function(d) { return d[0]* 10 + 10; })
+                      .y(function(d) { return d[1]* 10 + 10; })
+                      .curve(d3.curveLinear);
+
+ function gridLines(svg,ax,ay,bx,by,dx,dy)  {
+     for(i=ax; i<=bx; i+=dx)
+         svg.append("path").attr("d","M " + i + " " + ay + " L " + i + " " + by)
+            .attr("stroke","#cccccc").attr("stroke-width","2px");
+     for(i=ay; i<=by; i+=dy)
+         svg.append("path").attr("d","M " + ax + " " + i + " L " + bx + " " + i)
+            .attr("stroke","#cccccc").attr("stroke-width","2px");
+ }
+
+ function cmpAngle(pivot) {
+     var cmp = function(a,b) {
+         d1x = a.x - pivot.x;
+         d1y = a.y - pivot.y;
+         d2x = b.x - pivot.x;
+         d2y = b.y - pivot.y;
+         return Math.atan2(d2y, d2x) - Math.atan2(d1y, d1x);
+     };
+     return cmp;
+ }
+
+ var points = [ {x: 2, y: 2},
+                {x: 2,y: 20},
+                {x: 16,y: 20},
+                {x: 27,y: 10},
+                {x: 16,y: 12},
+                {x: 8,y: 23},
+                {x: 30,y: 25},
+                {x: 25,y: 29}];
+
+ var svg = d3.select("svg");
+
+ function multiline(svg,points,endcolor) {
+     for(i=0; i<points.length-3; i++)
+         svg.append("line")
+            .attr("x1",points[i].x * 10 + 10)
+            .attr("y1",points[i].y * 10 + 10)
+            .attr("x2",points[i+1].x * 10 + 10)
+            .attr("y2",points[i+1].y * 10 + 10)
+            .attr("stroke","blue")
+            .attr("width","2px");
+     j = points.length-3;
+     svg.append("line")
+        .attr("x1",points[j].x * 10 + 10)
+        .attr("y1",points[j].y * 10 + 10)
+        .attr("x2",points[j+1].x * 10 + 10)
+        .attr("y2",points[j+1].y * 10 + 10)
+        .attr("stroke",endcolor)
+        .attr("width","2px");
+     svg.append("line")
+        .attr("x1",points[j+1].x * 10 + 10)
+        .attr("y1",points[j+1].y * 10 + 10)
+        .attr("x2",points[j+2].x * 10 + 10)
+        .attr("y2",points[j+2].y * 10 + 10)
+        .attr("stroke",endcolor)
+        .attr("width","2px");
+}
+
+ gridLines(svg,10,10,490,490,10,10);
+ g = svg.append("g");
+ g.selectAll('circle')
+    .data(points)
+    .enter()
+    .append("circle")
+    .attr('r',function (d) { return "8px"; })
+    .attr('cx',function (d) { return d.x*10 + 10; })
+    .attr('cy',function (d) { return d.y*10 + 10; })
+    .attr('id',(d,i) => { return "c"+i; })
+    .attr('fill','black');
+ g.selectAll('text')
+    .data(points)
+    .enter()
+    .append("text")
+    .attr('x',function (d) {return d.x * 10 + 26; })
+    .attr('y',function (d) { return d.y*10; })
+    .text(function (d) { return "(" + d.x + "," + d.y + ")"; })
+    .attr('font-family','sans-serif')
+    .attr('font-size','20px')
+    .attr('fill','blue');
+
+ var pivot = points[7];
+ points.pop();
+ points.sort(cmpAngle(pivot));
+ console.log(points);
+
+ step_idx = -1;
+ function step() {
+     step_idx = (step_idx + 1) % 9;
+     svg.selectAll('line').remove();
+     switch (step_idx) {
+     case 0: multiline(svg,[pivot,points[0],points[1]],"black");
+             break;
+     case 1: multiline(svg,[pivot,points[0],points[1],points[2]],"black");
+             break;
+     case 2: multiline(svg,[pivot,points[0],points[1],points[2],points[3]],"red");
+             break;
+     case 3: multiline(svg,[pivot,points[0],points[1],points[3]],"blue");
+             break;
+     case 4: multiline(svg,[pivot,points[0],points[1],points[3],points[4]],"black");
+             break;
+     case 5: multiline(svg,[pivot,points[0],points[1],points[3],points[4],points[5]],"red");
+             break;
+     case 6: multiline(svg,[pivot,points[0],points[1],points[3],points[5]],"blue");
+             break;
+     case 7: multiline(svg,[pivot,points[0],points[1],points[3],points[5],points[6]],"black");
+             break;
+     case 8: multiline(svg,[pivot,points[0],points[1],points[3],points[5],points[6],pivot],"black");
+             break;
+     }
+ }
+
+ svg.on("click",step);
+
+</script>

@@ -1,0 +1,8 @@
+- Contests usually get cloned from the previous semester's contest.  Get the ID of the contest by looking for the last digits of the URL.
+- After cloning the contest, adjust these settings
+	- Start time should be 20 minutes after the lecture begins that day.  For Spring 2025 the start time should be 14:20.  The start day should be the same day.
+	- All contests are open for two weeks, rounded to 23:59 of that day.  So for a Wednesday, January 22nd contest, the due date is Wednesday, February 5th at 23:59.  It is easier to set the duration of the contest directly.  This semester the duration is 20739.
+		- **Exception**: The first two weeks the contest are due in three weeks, not four, because of the drop date.  The duration for these contest is 30819.  This will also apply for contests that become due during Spring Break.
+	- Set the "unfreeze time" to "today".
+	- Check the box to allow practice.
+	- Everything else can be left at their defaults.

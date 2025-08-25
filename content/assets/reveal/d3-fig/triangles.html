@@ -1,0 +1,18 @@
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<svg>
+  <path d="M 80 80
+           L 120 80
+           L 100 120
+           Z" fill="green"/>
+</svg>
+
+<script>
+ function isoTriangle(x,y,len) {
+    return "M " + x + " " + y + " L " + (x + len) + " " + y + " L " + (x + len / 2) + " " + (y - len * Math.sin(60 * Math.PI / 180));
+ }
+
+ var svg = d3.select("svg");
+ svg.append('svg:path')
+    .attr('d',isoTriangle(80,80,40))
+    .attr('fill','green');
+</script>
