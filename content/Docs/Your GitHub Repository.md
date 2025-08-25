@@ -6,7 +6,7 @@ If you've never used GitHub before, don't worry; you don't need to know anything
 
 Please note that **this is a multi-step process**!  If you do not follow **all** the steps then nothing will happen.
 
-1. Access the [magic repository creator link](https://edu.cs.illinois.edu/create-gh-repo/sp25_cs491cap) to get started. You will see a web page with the following content.  (Don't worry about the semester and class being for CS 101 Spring 2024.  We don't want to have to redownload everything each semester we do this.) 
+1. Access the [magic repository creator link](https://edu.cs.illinois.edu/create-gh-repo/fa_cs491cap) to get started. You will see a web page with the following content.  (Don't worry about the semester and class being for CS 101 Spring 2024.  We don't want to have to redownload everything each semester we do this.) 
 
    ![[log_in_to_GitHub.png]]
 
