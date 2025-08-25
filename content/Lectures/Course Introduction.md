@@ -3,6 +3,10 @@ Welcome to Competitive Programming!  Today we will talk about the benefits of co
 
 ## Slides 
 
--  [Slides](assets/reveal/course_intro.html)
--  [Slides](course_intro.html)
+-  [Slides](assets/reveal/course_intro/index.html)
+
+- Test2
+
+<iframe width="100%" height="500px" src="assets/reveal/course_intro.html"></iframe>
+
 
