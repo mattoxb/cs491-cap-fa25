@@ -4,4 +4,5 @@ Welcome to Competitive Programming!  Today we will talk about the benefits of co
 ## Slides 
 
 -  [Slides](assets/reveal/course_intro.html)
+-  [Slides](course_intro.html)
 
