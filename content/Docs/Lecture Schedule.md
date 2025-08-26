@@ -2,7 +2,7 @@
 | Week | Date               | Lecture                                  |
 |------|--------------------|------------------------------------------|
 | 1    | August 25, 2025    | [[Course Introduction]]                  |
-|      | August 27, 2025    | IO/Standard Template Library             |
+|      | August 27, 2025    | [[IO]]                                   |
 |      | August 29, 2025    | Complete Search                          |
 | 2    | September 1, 2025  | Coding Session                           |
 |      | September 3, 2025  | Divide and Conquer                       |
