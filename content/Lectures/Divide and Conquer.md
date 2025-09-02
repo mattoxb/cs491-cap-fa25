@@ -2,5 +2,4 @@ Divide and Conquer is an algorithmic strategy that involves breaking a complex p
 
 A classic example of this approach is the Merge Sort algorithm: the array is divided into two halves, each half is recursively sorted, and then the two sorted halves are merged together.
 
-## Slides
-- [[divide-and-conquer.pdf|Slides (PDF)]]
+<iframe id="kmsembed-1_dj6zbcqh" width="640" height="394" src="https://mediaspace.illinois.edu/embed/secure/iframe/entryId/1_dj6zbcqh/uiConfId/55779922/st/0" class="kmsembed" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" referrerPolicy="no-referrer-when-downgrade" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="CS 491: Divide And Conquer"></iframe>
