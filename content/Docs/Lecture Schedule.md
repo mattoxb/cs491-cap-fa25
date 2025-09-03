@@ -6,7 +6,7 @@
 |      | August 29, 2025    | [[Complete Search]]                      |
 | 2    | September 1, 2025  | Coding Session                           |
 |      | September 3, 2025  | [[Divide and Conquer]]                   |
-|      | September 5, 2025  | Disjoint Sets                            |
+|      | September 5, 2025  | [[Disjoint Sets]]                        |
 | 3    | September 8, 2025  | Coding Session                           |
 |      | September 10, 2025 | Divide and Conquer                       |
 |      | September 12, 2025 | Cycles and such                          |
