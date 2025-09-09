@@ -8,11 +8,11 @@
 |      | September 3, 2025  | [[Divide and Conquer]]                   |
 |      | September 5, 2025  | [[Disjoint Sets]]                        |
 | 3    | September 8, 2025  | Coding Session                           |
-|      | September 10, 2025 | Divide and Conquer                       |
-|      | September 12, 2025 | Cycles and such                          |
-| 4    | September 15, 2025 | Advanced Graph Topcs (Special Topic)     |
-|      | September 17, 2025 | Dijkstra and SPFA                        |
-|      | September 19, 2025 | All Path Shortest Path                   |
+|      | September 10, 2025 | [[Single Source Shortest Path]]          |
+|      | September 12, 2025 | All Pairs Shortest Path                  |
+| 4    | September 15, 2025 | Special Topics (Advanced Graphs)         |
+|      | September 17, 2025 | Trees, BSTs, Diameter                    |
+|      | September 19, 2025 | Cycles/Cut Edges/SCCs                    |
 | 5    | September 22, 2025 | Coding Session                           |
 |      | September 24, 2025 | Minimum Spanning Trees                   |
 |      | September 26, 2025 | Bit Manipulation and Fast Exponentiation |
