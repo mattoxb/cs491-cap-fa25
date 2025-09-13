@@ -9,7 +9,7 @@
 |      | September 5, 2025  | [[Disjoint Sets]]                        |
 | 3    | September 8, 2025  | Special Topic                            |
 |      | September 10, 2025 | [[Single Source Shortest Path]]          |
-|      | September 12, 2025 | [[Floyd Warshall]]                       |
+|      | September 12, 2025 | [[Floyd-Warshall]]                       |
 | 4    | September 15, 2025 | Special Topics (Advanced Graphs)         |
 |      | September 17, 2025 | Trees, BSTs, Diameter                    |
 |      | September 19, 2025 | Cycles/Cut Edges/SCCs                    |
