@@ -12,7 +12,7 @@
 |      | September 12, 2025 | [[Floyd-Warshall]]                       |
 | 4    | September 15, 2025 | Special Topics (Advanced Graphs)         |
 |      | September 17, 2025 | [[Trees]]                                |
-|      | September 19, 2025 | Cycles/Cut Edges/SCCs                    |
+|      | September 19, 2025 | [[Strongly Connected Components]]        |
 | 5    | September 22, 2025 | Coding Session                           |
 |      | September 24, 2025 | Minimum Spanning Trees                   |
 |      | September 26, 2025 | Bit Manipulation and Fast Exponentiation |

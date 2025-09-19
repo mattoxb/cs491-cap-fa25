@@ -1,4 +1,4 @@
-# Time Complexities
+## Time Complexities
 
 For a modern computer, here are the largest sample sizes that can be run in one second for a given time complexity.
 
@@ -12,3 +12,5 @@ For a modern computer, here are the largest sample sizes that can be run in one 
 | $10^5$          | ${\cal O}(n\times \log n\times \log n)$ |
 | $5 \times 10^5$ | ${\cal O}(n\times \log n)$              |
 | $10^7$          | ${\cal O}(n)$                           |
+
+ku 13 il 
