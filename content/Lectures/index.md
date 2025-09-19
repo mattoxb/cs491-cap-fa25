@@ -6,6 +6,7 @@ The links that are live are ready for view.  Unlinked ones are still
 accessible from the side menu; they are typically from a previous
 semester.
 
+
 | Week | Date               | Lecture                                  |
 |------|--------------------|------------------------------------------|
 | 1    | August 25, 2025    | [[Course Introduction]]                  |
@@ -13,13 +14,13 @@ semester.
 |      | August 29, 2025    | [[Complete Search]]                      |
 | 2    | September 1, 2025  | Coding Session                           |
 |      | September 3, 2025  | [[Divide and Conquer]]                   |
-|      | September 5, 2025  | Disjoint Sets                            |
-| 3    | September 8, 2025  | Coding Session                           |
-|      | September 10, 2025 | Divide and Conquer                       |
-|      | September 12, 2025 | Cycles and such                          |
-| 4    | September 15, 2025 | Advanced Graph Topcs (Special Topic)     |
-|      | September 17, 2025 | Dijkstra and SPFA                        |
-|      | September 19, 2025 | All Path Shortest Path                   |
+|      | September 5, 2025  | [[Disjoint Sets]]                        |
+| 3    | September 8, 2025  | Special Topic                            |
+|      | September 10, 2025 | [[Single Source Shortest Path]]          |
+|      | September 12, 2025 | [[Floyd-Warshall]]                       |
+| 4    | September 15, 2025 | Special Topics (Advanced Graphs)         |
+|      | September 17, 2025 | [[Trees]]                                |
+|      | September 19, 2025 | [[Strongly Connected Components]]        |
 | 5    | September 22, 2025 | Coding Session                           |
 |      | September 24, 2025 | Minimum Spanning Trees                   |
 |      | September 26, 2025 | Bit Manipulation and Fast Exponentiation |
