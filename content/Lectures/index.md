@@ -22,7 +22,7 @@ semester.
 |      | September 17, 2025 | [[Trees]]                                |
 |      | September 19, 2025 | [[Strongly Connected Components]]        |
 | 5    | September 22, 2025 | Coding Session                           |
-|      | September 24, 2025 | Minimum Spanning Trees                   |
+|      | September 24, 2025 | [[Kruskal's Algorithm]]                  |
 |      | September 26, 2025 | Bit Manipulation and Fast Exponentiation |
 | 6    | September 29, 2025 | Coding Session                           |
 |      | October 1, 2025    | Sqrt Decomposition                       |
