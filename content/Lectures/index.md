@@ -26,7 +26,7 @@ semester.
 |      | September 26, 2025 | [[Bit Manipulation]]                     |
 | 6    | September 29, 2025 | Coding Session                           |
 |      | October 1, 2025    | [[Sqrt Decomposition]]                   |
-|      | October 2, 2025    | Segment Trees                            |
+|      | October 3, 2025    | [[Segment Trees]]                        |
 | 7    | October 6, 2025    | Coding Session                           |
 |      | October 8, 2025    | Lazy Segment Trees                       |
 |      | October 10, 2025   | Fenwick Trees                            |
