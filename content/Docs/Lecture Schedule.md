@@ -20,7 +20,7 @@
 |      | October 1, 2025    | [[Sqrt Decomposition]]                   |
 |      | October 3, 2025    | [[Segment Trees]]                        |
 | 7    | October 6, 2025    | Coding Session                           |
-|      | October 8, 2025    | Lazy Segment Trees                       |
+|      | October 8, 2025    | [[Lazy Segment Trees]]                   |
 |      | October 10, 2025   | Fenwick Trees                            |
 | 8    | October 13, 2025   | Advanced Data Structures (Special Topic) |
 |      | October 15, 2025   | Greedy Algorithms                        |
