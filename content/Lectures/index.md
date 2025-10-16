@@ -32,7 +32,7 @@ semester.
 |      | October 10, 2025   | [[Fenwick Trees]]                        |
 | 8    | October 13, 2025   | Advanced Data Structures (Special Topic) |
 |      | October 15, 2025   | [[Greedy Algorithms]]                    |
-|      | October 17, 2025   | Intro to DP                              |
+|      | October 17, 2025   | [[Dynamic Programming]]                  |
 | 9    | October 20, 2025   | Coding Session                           |
 |      | October 22, 2025   | DP: LIS and LCS                          |
 |      | Ocotber 24, 2025   | DP: Palindromes                          |
