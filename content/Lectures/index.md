@@ -34,8 +34,8 @@ semester.
 |      | October 15, 2025   | [[Greedy Algorithms]]                    |
 |      | October 17, 2025   | [[Dynamic Programming]]                  |
 | 9    | October 20, 2025   | Coding Session                           |
-|      | October 22, 2025   | DP: LIS and LCS                          |
-|      | Ocotber 24, 2025   | DP: Palindromes                          |
+|      | October 22, 2025   | DP: [[Longest Common Sequence]]          |
+|      | Ocotber 24, 2025   | [[DP Palindromes]]                       |
 | 10   | October 27, 2025   | DP: TSP (Special Topic)                  |
 |      | October 29, 2025   | DP: Edit Distance                        |
 |      | October 31, 2025   | DP: Knapsack                             |
