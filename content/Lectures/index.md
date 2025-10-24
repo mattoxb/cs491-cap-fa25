@@ -37,8 +37,8 @@ semester.
 |      | October 22, 2025   | DP: [[Longest Common Sequence]]          |
 |      | Ocotber 24, 2025   | [[DP Palindromes]]                       |
 | 10   | October 27, 2025   | DP: TSP (Special Topic)                  |
-|      | October 29, 2025   | DP: Edit Distance                        |
-|      | October 31, 2025   | DP: Knapsack                             |
+|      | October 29, 2025   | [[DP Edit Distance]]                     |
+|      | October 31, 2025   | [[DP Knapsack]]                          |
 | 11   | November 3, 2025   | Coding Session                           |
 |      | November 5, 2025   | DP: Trees and DAGs                       |
 |      | November 7, 2025   | KMP                                      |
