@@ -32,7 +32,7 @@
 |      | October 29, 2025   | [[DP Edit Distance]]                     |
 |      | October 31, 2025   | [[DP Knapsack]]                          |
 | 11   | November 3, 2025   | Coding Session                           |
-|      | November 5, 2025   | DP: Trees and DAGs                       |
+|      | November 5, 2025   | [[Tree DP]]                              |
 |      | November 7, 2025   | KMP                                      |
 | 12   | November 10, 2025  | Coding Session                           |
 |      | November 12, 2025  | Rabin Karp                               |
