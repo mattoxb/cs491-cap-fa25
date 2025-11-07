@@ -33,7 +33,7 @@
 |      | October 31, 2025   | [[DP Knapsack]]                          |
 | 11   | November 3, 2025   | Coding Session                           |
 |      | November 5, 2025   | [[Tree DP]]                              |
-|      | November 7, 2025   | KMP                                      |
+|      | November 7, 2025   | [[DP KMP]]                               |
 | 12   | November 10, 2025  | Coding Session                           |
 |      | November 12, 2025  | Rabin Karp                               |
 |      | November 14, 2025  | Number Theory I                          |
