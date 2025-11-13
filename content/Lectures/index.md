@@ -43,9 +43,9 @@ semester.
 |      | November 5, 2025   | [[Tree DP]]                              |
 |      | November 7, 2025   | [[DP KMP]]                               |
 | 12   | November 10, 2025  | Coding Session                           |
-|      | November 12, 2025  | Rabin Karp                               |
-|      | November 14, 2025  | Number Theory I                          |
-| 13   | November 17, 2025  | Number Theory II                         |
+|      | November 12, 2025  | [[Rabin Karp]]                           |
+|      | November 14, 2025  | [[Primes and GCD]]                       |
+| 13   | November 17, 2025  | Inclusion Exclusion                      |
 |      | November 19, 2025  | Combinatorics                            |
 |      | November 21, 2025  | No Class                                 |
 | 14   | December 1, 2025   | Coding Session                           |
