@@ -46,7 +46,7 @@ semester.
 |      | November 12, 2025  | [[Rabin Karp]]                                           |
 |      | November 14, 2025  | [[Primes and GCD]]                                       |
 | 13   | November 17, 2025  | [[Fermat's Little Theorem and Euler's Totient Function]] |
-|      | November 19, 2025  | Combinatorics                                            |
+|      | November 19, 2025  | [[Combinatorics]]                                        |
 |      | November 21, 2025  | No Class                                                 |
 | 14   | December 1, 2025   | Coding Session                                           |
 |      | December 3, 2025   | Geometry: Points, Lines, Vectors, Shapes                 |
