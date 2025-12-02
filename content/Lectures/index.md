@@ -49,7 +49,7 @@ semester.
 |      | November 19, 2025  | [[Combinatorics]]                                        |
 |      | November 21, 2025  | No Class                                                 |
 | 14   | December 1, 2025   | Coding Session                                           |
-|      | December 3, 2025   | Geometry: Points, Lines, Vectors, Shapes                 |
+|      | December 3, 2025   | [[Points, Lines, Vectors, Shapes]]                     |
 |      | December 5, 2025   | Geometry: Convex Hull                                    |
 | 15   | December 8, 2025   | Geometry: Line Sweep (Special Topic)                     |
 |      | December 10, 2025  | Coding Session / Special Topic                           |
